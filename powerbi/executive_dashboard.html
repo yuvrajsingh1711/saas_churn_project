@@ -1,0 +1,219 @@
+<html><head><meta charset="utf-8"><title>SaaS Churn Executive Summary</title>
+<style>body{font-family:Arial;max-width:1000px;margin:auto;padding:20px;background:#f4f6f7}
+.kpi{display:flex;gap:15px} .card{flex:1;background:#fff;padding:20px;border-radius:10px;text-align:center;box-shadow:0 2px 5px #ccc}
+.card h2{margin:0;color:#2E86C1} img{width:100%;background:#fff;border-radius:10px;margin:15px 0;padding:10px}
+table{border-collapse:collapse;width:100%;background:#fff} th,td{border:1px solid #ddd;padding:8px;font-size:13px} th{background:#2E86C1;color:#fff}</style>
+</head><body>
+<h1>SaaS Customer Churn - Executive Summary</h1>
+<p>Power BI layout ka Python version | Data: rfm_segmented.csv (2000 users)</p>
+<div class="kpi">
+<div class="card"><p>Total Users</p><h2>2000</h2></div>
+<div class="card"><p>Churn Rate</p><h2>15.0%</h2></div>
+<div class="card"><p>MRR Lost</p><h2>Rs 413,301</h2></div>
+<div class="card"><p>At-Risk Users</p><h2>1073</h2><p>Revenue at risk: Rs 1,237,329</p></div>
+</div>
+<h2>1. Churn by Subscription Tier</h2><img src="dashboard_images/01_churn_by_tier.png">
+<p>Enterprise me churn % sabse zyada (~20.9%) - MRR loss ka main reason.</p>
+<h2>2. Churn by Region</h2><img src="dashboard_images/02_churn_by_region.png">
+<h2>3. Activity Trend (last 90 days)</h2><img src="dashboard_images/03_activity_trend.png">
+<p>Last 30 din me activity giri - churn ka early signal.</p>
+<h2>4. Activity Drop by RFM Tier</h2><img src="dashboard_images/04_drop_by_tier.png">
+<h2>5. RFM Distribution</h2><img src="dashboard_images/05_rfm_dist.png">
+<h2>6. Top 20 At-Risk Users (Retention Action List)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>user_id</th>
+      <th>email</th>
+      <th>subscription_tier</th>
+      <th>region</th>
+      <th>recency_days</th>
+      <th>churn_probability</th>
+      <th>monthly_revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>U1850</td>
+      <td>sheriramirez@example.org</td>
+      <td>Enterprise</td>
+      <td>US-East</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>4971</td>
+    </tr>
+    <tr>
+      <td>U0923</td>
+      <td>snichols@example.com</td>
+      <td>Basic</td>
+      <td>US-East</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>480</td>
+    </tr>
+    <tr>
+      <td>U0063</td>
+      <td>amydavenport@example.net</td>
+      <td>Basic</td>
+      <td>Delhi</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>549</td>
+    </tr>
+    <tr>
+      <td>U0842</td>
+      <td>sandra99@example.org</td>
+      <td>Pro</td>
+      <td>US-East</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>1528</td>
+    </tr>
+    <tr>
+      <td>U0884</td>
+      <td>jamie33@example.net</td>
+      <td>Pro</td>
+      <td>UK-London</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>1505</td>
+    </tr>
+    <tr>
+      <td>U0308</td>
+      <td>zachary87@example.com</td>
+      <td>Basic</td>
+      <td>US-East</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>521</td>
+    </tr>
+    <tr>
+      <td>U1447</td>
+      <td>shane60@example.org</td>
+      <td>Pro</td>
+      <td>Delhi</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>1484</td>
+    </tr>
+    <tr>
+      <td>U1452</td>
+      <td>estradadavid@example.org</td>
+      <td>Pro</td>
+      <td>Bangalore</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>1519</td>
+    </tr>
+    <tr>
+      <td>U0018</td>
+      <td>zhurst@example.com</td>
+      <td>Basic</td>
+      <td>Hyderabad</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>519</td>
+    </tr>
+    <tr>
+      <td>U1412</td>
+      <td>jasonwilliams@example.net</td>
+      <td>Basic</td>
+      <td>Bangalore</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>457</td>
+    </tr>
+    <tr>
+      <td>U1767</td>
+      <td>hartmelissa@example.org</td>
+      <td>Enterprise</td>
+      <td>Delhi</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>4995</td>
+    </tr>
+    <tr>
+      <td>U0432</td>
+      <td>srocha@example.net</td>
+      <td>Basic</td>
+      <td>Hyderabad</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>492</td>
+    </tr>
+    <tr>
+      <td>U0475</td>
+      <td>todd15@example.com</td>
+      <td>Pro</td>
+      <td>US-East</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>1522</td>
+    </tr>
+    <tr>
+      <td>U1845</td>
+      <td>yhart@example.com</td>
+      <td>Pro</td>
+      <td>Delhi</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>1461</td>
+    </tr>
+    <tr>
+      <td>U0481</td>
+      <td>lisa65@example.org</td>
+      <td>Basic</td>
+      <td>Bangalore</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>498</td>
+    </tr>
+    <tr>
+      <td>U1140</td>
+      <td>marymullins@example.com</td>
+      <td>Basic</td>
+      <td>UK-London</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>486</td>
+    </tr>
+    <tr>
+      <td>U1028</td>
+      <td>juliamcneil@example.org</td>
+      <td>Pro</td>
+      <td>Hyderabad</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>1518</td>
+    </tr>
+    <tr>
+      <td>U1355</td>
+      <td>boydmaria@example.net</td>
+      <td>Enterprise</td>
+      <td>Hyderabad</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>4963</td>
+    </tr>
+    <tr>
+      <td>U0290</td>
+      <td>mariahdavis@example.org</td>
+      <td>Basic</td>
+      <td>UK-London</td>
+      <td>59</td>
+      <td>0.90</td>
+      <td>542</td>
+    </tr>
+    <tr>
+      <td>U1433</td>
+      <td>kwilson@example.net</td>
+      <td>Pro</td>
+      <td>Bangalore</td>
+      <td>58</td>
+      <td>0.89</td>
+      <td>1496</td>
+    </tr>
+  </tbody>
+</table>
+<p><b>Retention plan:</b> VIP At-Risk ko personal call + discount, Basic Sharp-Drop ko onboarding email, tickets>2 walo ko priority support.</p>
+</body></html>
